@@ -34,4 +34,9 @@ if systemctl list-unit-files | grep -q "^$SERVICE.service"; then
 else
     echo "$TIMESTAMP - Сервис $SERVICE не найден" >> "$LOGFILE"
     echo "Сервис $SERVICE не найден в системе."
+
+
+# === Показать последние записи лога ===
+echo "=== Последние 10 строк лога ==="
+tail -n 10 "$LOGFILE"
 fi
